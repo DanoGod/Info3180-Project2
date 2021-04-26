@@ -700,6 +700,10 @@ const AddCar = {
                 <div>
                     <label class="" for="car_type">Car Type</label><br>
                     <select name="car_type" class="form-control form-field" required>
+					 <option value="Luxury Car">Luxury Car</option>
+                        <option value="Hybrid/Electric">Hybrid/Electric</option>
+                        <option value="Super Car">Super Car</option>
+                        <option value="Hyper Car">Hyper Car</option>
                         <option value="SUV">SUV</option>
                         <option value="Truck">Truck</option>
                         <option value="Sedan">Sedan</option>
@@ -708,12 +712,6 @@ const AddCar = {
                         <option value="Wagon">Wagon</option>
                         <option value="Convertible">Convertible</option>
                         <option value="Sports Car">Sports Car</option>
-                        <option value="Diesel">Diesel</option>
-                        <option value="Crossover">Crossover</option>
-                        <option value="Luxury Car">Luxury Car</option>
-                        <option value="Hybrid/Electric">Hybrid/Electric</option>
-                        <option value="Super Car">Super Car</option>
-                        <option value="Hyper Car">Hyper Car</option>
                     </select>
                 </div>
             </div>
@@ -761,7 +759,7 @@ const AddCar = {
             })
             .then(function(jsonResponse) {
                 router.push('/explore');
-                swal({title: "Add Car",text: jsonResponse.message,icon: "success",button: "Proceed"});
+                swal({title: "Add Car",text: jsonResponse.data.message,button: "Click Here To Continue"});
             })
             .catch(function(error) {
                 console.log(error);
